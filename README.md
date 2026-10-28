@@ -3,8 +3,6 @@
 Four living worlds in your pocket. A silent, offline scene player with original
 backgrounds, moving particles, hidden surprises and optional white case lights.
 
-<img src="apps/portal/assets/reef.png" width="320" alt="Octocat Reef underwater scene">
-
 **Pocket Universe → The Abyss → Neon San Francisco → Octocat Reef**
 
 Watch a nebula and passing comet, luminous jellyfish, Golden Gate traffic and fog,
@@ -13,14 +11,25 @@ every 28 seconds by default. Hold a favorite world without freezing its animatio
 or trigger its surprise with a button. No account, network, agenda or other app
 is required.
 
+## Four worlds to explore
+
+| Pocket Universe | The Abyss |
+| --- | --- |
+| ![Portal simulator showing the animated galaxy and stars](screenshots/pocket-universe.png) | ![Portal simulator showing luminous jellyfish](screenshots/abyss.png) |
+| **Neon San Francisco** | **Octocat Reef** |
+| ![Portal simulator showing the Golden Gate at night](screenshots/neon-san-francisco.png) | ![Portal simulator showing the Octocat diver and shipwreck](screenshots/reef.png) |
+
+Simulator screenshots rendered from the included app code at 2× its native
+320 × 240 resolution. Each is a moment from an animated scene. Holding a world
+keeps its animation running.
+
 ## Install in five steps
 
 You need a **GitHub Universe 2026 Badger 2350 badge**, its supplied firmware and a
 USB cable that carries data. No firmware flashing or Python installation is
 needed for the direct-folder method.
 
-1. Download this repository using **Code → Download ZIP**, then extract it. The
-   repository is private, so you must be signed into an account with access.
+1. Download this repository using **Code → Download ZIP**, then extract it.
 2. Open the badge's supplied **USB Disk / Mass Storage** app and connect USB.
    A drive named **BADGER** should appear. Copy its current contents somewhere
    safe before making changes.
@@ -49,9 +58,9 @@ than creating a guessed second system tree.
 
 ### Updating, rolling back and removing
 
-Before an update, copy any existing `apps/portal/` folder off the badge, including
-any local `config.json`. Replace only that custom app folder. Reapply your own
-configuration separately; never overwrite it with someone else's profile.
+Before an update, copy any existing `apps/portal/` folder off the badge. Replace
+only that custom app folder. Its saved scene and display preferences remain in
+the badge's separate state storage.
 
 To roll back, restore the previous custom app folder. To uninstall, remove only
 `apps/portal/`. Neither action requires changing the stock launcher or secrets.
@@ -90,9 +99,10 @@ python3 build.py
 ```
 
 The build creates `dist/portal-badge.zip` with only the allowlisted app, install
-instructions and linked documentation. Extract it and copy `apps/portal` using the steps above. Personal
-`config.json`, credentials and save files are excluded from the build allowlist.
-Keep README and NOTICE with the download for instructions and provenance; copy
+instructions, screenshots and linked documentation. Extract it and copy
+`apps/portal` using the steps above. Personal configuration, credentials and
+save files are excluded from the build allowlist.
+Keep the documentation and screenshots with the download for reference. Copy
 only the app folder to the badge.
 
 Runtime code lives in `apps/portal/`; portable logic is in `core.py`. The app is
@@ -115,9 +125,9 @@ also tested locally. Older badges and other firmware versions are not verified.
 - **No colored case lights:** the badge's case LEDs are white; screen colors are
   unrelated. Check the app's brightness/decorative-light settings.
 
-This repository is **private**. It contains only this custom app, generic defaults,
-tests and documentation—no stock badge apps, firmware, personal agenda, passwords,
-Wi-Fi secrets, device backups or browser sessions.
+The download contains this custom app, generic defaults, tests and documentation.
+Stock firmware, personal agendas, credentials, device backups and browser sessions
+are excluded.
 
 ## Credits and maintenance
 
@@ -125,6 +135,6 @@ Wi-Fi secrets, device backups or browser sessions.
 trademark provenance. This is an unofficial custom app, not an official firmware
 release. Third-party artwork and marks retain their owners' rights.
 
-For each completed change, update the README/help, run relevant checks, and push
-the completed source to this private repository. Keep it private until the owner
-explicitly approves a visibility change.
+For each change, update the README and in-app help, run the checks above, and
+keep documentation screenshots aligned with the included app. Keep personal
+configuration and save data outside version control.
